@@ -245,6 +245,12 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
+# screenshot all screen
+bindsym Print exec import -window root ~/Pictures/screenshot/`date +%d:%m:%g_%H:%M:%S`.jpg
+# screenshot active window
+bindsym $mod+Print exec import -window `xprop -root _NET_ACTIVE_WINDOW | cut -d ' ' -f 5` ~/Pictures/screenshot/`date +%d:%m:%g_%H:%M:%S`.jpg
+
+
 bindsym $mod+l exec --no-startup-id ~/bin/i3/i3exit.sh lock
 
 set $mode_system System (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown

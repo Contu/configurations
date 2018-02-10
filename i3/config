@@ -30,10 +30,11 @@ font pango:monospace 8
 floating_modifier $mod
 
 set $term rxvt
+set $borderPix 3
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-for_window [instance="term"] border pixel 3
+for_window [class="^URxvt$"] border pixel $borderPix
 # start ranger file manager
 bindsym $mod+z exec $term -name ranger -e ranger
 # start text editor
@@ -126,19 +127,25 @@ bindsym $mod+0 workspace 10
 # start emacs on workspace 1
 assign [class="Emacs24"] $workspace1
 for_window [class="^Emacs24$"] focus
-for_window [class="^Emacs24$"] border pixel 3
+for_window [class="^Emacs24$"] border pixel $borderPix
 # start firefox on workspace 2
 assign [class="^Firefox$"] $workspace2
 for_window [class="^Firefox$"] focus
 # start ranger on workspace 3
 assign [class="^URxvt$" instance="^ranger$"] $workspace3
 for_window [class="^URxvt$" instance="^ranger$"] focus
-for_window [class="^URxvt$" instance="^ranger$"] border pixel 3
 # start mutt on workspace 4
 assign [class="^URxvt$" instance="^mutt$"] $workspace4
 for_window [class="^URxvt$" instance="^mutt$"] focus
+# for_window [class="^URxvt$" instance="^mutt$"] border pixel $borderPix
 
-for_window [class="^MuPDF$"] border pixel 3
+for_window [class="^MuPDF$"] border pixel $borderPix
+for_window [class="^feh$"] border pixel $borderPix
+for_window [class="^mpv$"] border pixel $borderPix
+
+bindsym $mod+k exec ~/bin/cam-toggle.sh
+for_window [title="video0 - mpv"] floating enable
+for_window [title="video0 - mpv"] sticky enable
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -160,7 +167,7 @@ exec --no-startup-id nm-applet
 for_window [instance="music"] floating enable
 for_window [instance="music"] resize set 1000 450
 for_window [instance="music"] move scratchpad
-for_window [instance="music"] border pixel 3
+#for_window [instance="music"] border pixel $borderPix
 exec --no-startup-id $term -name music -e ncmpcpp
 
 # reload the configuration file

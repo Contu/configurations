@@ -3,26 +3,6 @@
 ;;; Commentary:
 
 ;;; Code:
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(ansi-color-names-vector
-   ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
- '(column-number-mode t)
- '(custom-enabled-themes (quote (wheatgrass)))
-  '(show-paren-mode t)
- '(size-indication-mode t)
- '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
@@ -123,12 +103,33 @@
 (put 'narrow-to-region 'disabled nil)
 
 
-(set-face-background 'mode-line "green")
+(set-face-background 'mode-line "white")
 (set-face-foreground 'mode-line "black")
-(set-face-background 'mode-line-inactive "grey")
+(set-face-background 'mode-line-inactive "darkgrey")
+(set-face-foreground 'mode-line-inactive "black")
 
 (set-face-background 'minibuffer-prompt "blue")
 (set-face-foreground 'minibuffer-prompt "white")
 
 ;;; .emacs ends here
 (put 'dired-find-alternate-file 'disabled nil)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
+ '(column-number-mode t)
+ '(custom-enabled-themes (quote (wheatgrass)))
+ '(show-paren-mode t)
+ '(size-indication-mode t)
+ '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

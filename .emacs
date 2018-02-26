@@ -14,6 +14,8 @@
 (global-auto-revert-mode t)
 (defvar calendar-week-start-day 1)
 
+(set-cursor-color "#058E02")
+
 ;; printing
 (setq ps-paper-type 'a4)
 (defvar ps-print-header nil)
@@ -57,6 +59,9 @@
 (defvar TeX-view-program-list
       '(("PDF Viewer" "mupdf %o")))
 
+
+(use-package graphviz-dot-mode
+  :ensure t)
 
 (use-package web-mode
   :ensure t)

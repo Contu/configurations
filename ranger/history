@@ -1,0 +1,33 @@
+find lock
+find l
+find lock.png
+search lock
+search lock.png
+search diary
+set show_hidden true
+set show_hidden false
+search terminal
+find t
+find di
+search test*
+set use_preview_script True
+rename Perl.Pocket.Reference.5th.Edition.pdf
+mkdir screenshot
+open_with vlc
+open_with 
+set 
+bulkrename 
+rename far_cry_mountain.jpg
+find v
+rename block
+shell 
+search video
+chmod u+x 
+chmod u+x %f
+chmod 744 %f
+chmod 644 
+rename bin
+find 
+mkdir penDrive
+delete
+mkdir img

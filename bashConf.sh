@@ -1,7 +1,7 @@
 # Environment variables
 export VISUAL="emacsclient -a vim -nw"
 export EDITOR="emacsclient -a vim -nw"
-export SUDO_EDITOR="emacsclient"
+export SUDO_EDITOR="emacsclient -a vim -nw"
 export ALTERNATE_EDITOR="vim"
 export PATH=$PATH:~/bin
 

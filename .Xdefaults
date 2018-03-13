@@ -27,13 +27,13 @@ URxvt*termName:                        rxvt-256color
 
 ! font configuration
 !URxvt*font:                            xft:Monospace:pixelsize=12
-URxvt*font:                             xft:monospace:size=10
+URxvt*font:                             xft:monospace:size=9
 !URxvt*font:                            xft:Terminus:pixelsize=15
 
 ! terminal configuration for launching
 URxvt.cutchars:                        ()*,<>[]{}|`""''
 URxvt.perl-ext-common:                 default,matcher,resize-font,url-select,keyboard-select
-URxvt.urlLauncher:                     sensible-browser
+URxvt.url-select.launcher:             firefox
 URxvt.matcher.button: 		       1
 URxvt*iso14755_52:                     false
 !URxvt*matcher.pattern.1:   \\b(mailto:)[\\w\-\@;\/?:&=%\$_.+!*\x27(),~#]+ [\\w\-\@;\/?:&=%\$_+!*\x27()~]

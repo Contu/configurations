@@ -10,11 +10,14 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+gaps inner 4
+gaps outer 4
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -30,8 +33,10 @@ font pango:monospace 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-set $term rxvt
+set $term urxvt
 set $borderPix 3
+
+for_window [class="^.*"] border pixel $borderPix
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -44,8 +49,8 @@ bindsym $mod+x exec emacs
 bindsym $mod+b exec firefox
 # show ncmpcpp
 bindsym $mod+n [instance="music"] scratchpad show; [instance="music"] move position center  
-# start mutt (patched)
-bindsym $mod+m exec $term -name mutt -e mutt-patched 
+# start neomutt
+bindsym $mod+m exec $term -name mutt -e neomutt 
 # start htop
 bindsym $mod+j exec $term -e htop
 
@@ -110,12 +115,12 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 set $workspace1 1
-set $workspace2 2: 
+set $workspace2 2
 set $workspace3 3
-set $workspace4 4: 
+set $workspace4 4
 
 # use workspaces on different monitors
-workspace "$workspace1" output LVDS1
+workspace $workspace1 output LVDS1
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -130,9 +135,9 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # start emacs on workspace 1
-assign [class="Emacs24"] $workspace1
-for_window [class="^Emacs24$"] focus
-for_window [class="^Emacs24$"] border pixel $borderPix
+assign [class="^Emacs"] $workspace1
+for_window [class="^Emacs"] focus
+for_window [class="^Emacs"] border pixel $borderPix
 # start firefox on workspace 2
 assign [class="^Firefox$"] $workspace2
 for_window [class="^Firefox$"] focus
@@ -140,7 +145,7 @@ for_window [class="^Firefox$"] focus
 #assign [class="^URxvt$" instance="^ranger$"] $workspace3
 #for_window [class="^URxvt$" instance="^ranger$"] focus
 # start mutt on workspace 4
-assign [class="^URxvt$" instance="^mutt$"] $workspace4
+assign [class="^URxvt$" instance="^mutt$"] $workspace3
 for_window [class="^URxvt$" instance="^mutt$"] focus
 # for_window [class="^URxvt$" instance="^mutt$"] border pixel $borderPix
 
@@ -166,8 +171,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # set up wallpaper
 exec --no-startup-id ~/.fehbg
-# run network manager
-exec --no-startup-id nm-applet
+# run compton
+exec --no-startup-id compton -b
 # run ncmpcpp music player client
 for_window [instance="music"] floating enable
 for_window [instance="music"] resize set 1000 450
@@ -210,24 +215,29 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
+#bar {
         #status_command i3status
-	status_command i3blocks
+	#status_command i3blocks
         #tray_output primary
-	position top
-	font pango:Source Sans Pro-10 9
-	colors {
-	       separator #268bd2
+	#position top
+	#font pango:Source Sans Pro-10 9
+	#colors {
+	#       separator #268bd2
 	       #background #002b36
-	       background #000000
-	       statusline #839496
-	       focused_workspace #088A29 #088A29 #fdf6e3
-	       active_workspace #088A29 #088A29 #fdf6e3
-	       inactive_workspace #848484 #848484 #002b36
-	       urgent_workspace #d33682 #d33682 #fdf6e3
-	}
+	#       background #000000
+	#       statusline #839496
+	#       focused_workspace #088A29 #088A29 #fdf6e3
+	#       active_workspace #088A29 #088A29 #fdf6e3
+	#       inactive_workspace #848484 #848484 #002b36
+	#       urgent_workspace #d33682 #d33682 #fdf6e3
+	#}
 
-}
+#}
+
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# run network manager
+exec --no-startup-id nm-applet
 
 client.focused #073642 #073642 #eee8d5 #6c71c4
 client.focused_inactive #FFCCCC #FFCCCC #eee8d5 #6c71c4
@@ -245,8 +255,8 @@ bindsym XF86Display exec amixer -q -D pulse sset Capture 5%+; exec pkill -RTMIN+
 #XF86WebDisplay
 
 # Sreen brightness controls
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 # Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad

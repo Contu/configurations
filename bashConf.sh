@@ -41,3 +41,14 @@ gr() {
 	echo "Wrong arguments !!!"
     fi
 }
+
+mountRemovableDrive() {
+    LABEL=`sudo dosfslabel $1`
+    mkdir ~/$LABEL
+    sudo mount $1 ~/$LABEL 
+}
+
+umountRemovableDrive() {
+    sudo umount $1
+    rmdir `basename $1`
+}

@@ -44,6 +44,9 @@ gr() {
 
 mountRemovableDrive() {
     LABEL=`sudo dosfslabel $1`
+    #trim
+    read  -rd '' LABEL <<< "$LABEL"
+    LABEL=${LABEL// /__}
     mkdir ~/$LABEL
     sudo mount $1 ~/$LABEL 
 }

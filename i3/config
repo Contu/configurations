@@ -10,8 +10,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-gaps inner 4
-gaps outer 4
+gaps inner 10
+gaps outer 2
 
 set $mod Mod4
 
@@ -34,13 +34,13 @@ font pango:monospace 10
 floating_modifier $mod
 
 set $term urxvt
-set $borderPix 3
+set $borderPix 2
 
 for_window [class="^.*"] border pixel $borderPix
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-for_window [class="^URxvt$"] border pixel $borderPix
+#for_window [class="^URxvt$"] border pixel $borderPix
 # start ranger file manager
 bindsym $mod+z exec $term -name ranger -e ranger
 # start text editor
@@ -118,40 +118,60 @@ set $workspace1 1
 set $workspace2 2
 set $workspace3 3
 set $workspace4 4
+set $workspace5 5
+set $workspace6 6
+set $workspace7 7
+set $workspace8 8
+set $workspace9 9
+set $workspace10 10
 
 # use workspaces on different monitors
-workspace $workspace1 output LVDS1
+# set $mon1 LVDS1
+# set $mon2 VGA1
+# workspace $workspace1 output $mon1
+# workspace $workspace2 output $mon1
+# workspace $workspace3 output $mon1
+# workspace $workspace4 output $mon1
+# workspace $workspace5 output $mon1
+# workspace $workspace6 output $mon2
+# workspace $workspace7 output $mon2
+# workspace $workspace8 output $mon2
+# workspace $workspace9 output $mon2
+# workspace $workspace10 output $mon2
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
 
 # start emacs on workspace 1
 assign [class="^Emacs"] $workspace1
 for_window [class="^Emacs"] focus
-for_window [class="^Emacs"] border pixel $borderPix
+#for_window [class="^Emacs"] border pixel $borderPix
+
 # start firefox on workspace 2
 assign [class="^Firefox$"] $workspace2
 for_window [class="^Firefox$"] focus
+
 # start ranger on workspace 3
 #assign [class="^URxvt$" instance="^ranger$"] $workspace3
 #for_window [class="^URxvt$" instance="^ranger$"] focus
+
 # start mutt on workspace 4
 assign [class="^URxvt$" instance="^mutt$"] $workspace3
 for_window [class="^URxvt$" instance="^mutt$"] focus
 # for_window [class="^URxvt$" instance="^mutt$"] border pixel $borderPix
 
-for_window [class="^MuPDF$"] border pixel $borderPix
-for_window [class="^feh$"] border pixel $borderPix
-for_window [class="^mpv$"] border pixel $borderPix
+#for_window [class="^MuPDF$"] border pixel $borderPix
+#for_window [class="^feh$"] border pixel $borderPix
+#for_window [class="^mpv$"] border pixel $borderPix
 
 bindsym $mod+k exec ~/bin/cam-toggle.sh
 for_window [title="video0 - mpv"] floating enable
@@ -162,12 +182,12 @@ bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # set up wallpaper
 exec --no-startup-id ~/.fehbg
@@ -184,8 +204,6 @@ exec --no-startup-id $term -name music -e ncmpcpp
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

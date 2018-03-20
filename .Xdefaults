@@ -10,25 +10,25 @@ URxvt.imLocale: en_US.UTF-8
 
 ! scrolling garbage
 URxvt*scrollBar:                       false
-URxvt.loginShell:           	         true
+URxvt.loginShell:           	       true
 
 ! terminal color configuration
 URxvt*cursorColor:                     #347C17
 URxvt*foreground:                      grey75
-URxvt*background:                      #000000
+URxvt*background:                      [93]#000000
 URxvt*saveLines:                       7777
 URxvt*cursorBlink:                     true
 URxvt*termName:                        rxvt-256color
-URxvt.iso14755:			                   false
+URxvt.iso14755:			       false
 
-!URxvt*depth:			       32
+URxvt*depth:			       32
 !URxvt.inheritPixmap:        	       false
 !Fake transparency
 !URxvt*transparent:		       false
 
 ! font configuration
 !URxvt*font:                            xft:Monospace:pixelsize=12
-URxvt*font:                             xft:monospace:size=9
+URxvt*font:                             xft:monospace:size=10
 !URxvt*font:                            xft:Terminus:pixelsize=15
 
 ! terminal configuration for launching

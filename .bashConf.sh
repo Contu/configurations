@@ -11,7 +11,7 @@ alias ll='ls -hlF'
 
 # Functions
 em() {
-    if [ $# -eq 2 ] && [ $2 = 'root' ]; then
+    if [ -f "$1" ] && [ ! -w "$1" ]; then
     	sudo -e $1
     else
     	emacsclient -a vim -nw $1
@@ -21,12 +21,6 @@ em() {
 fn() {
      if [ $# -eq 1 ]; then
          find . -name $1 2> /dev/null
-     elif [ $# -eq 2 ] && [ $1 = 'l' ]; then
-     	 find . -name "*$2" 2> /dev/null
-     elif [ $# -eq 2 ] && [ $1 = 'r' ]; then
-     	 find . -name "$2*" 2> /dev/null
-     elif [ $# -eq 2 ] && [ $1 = 'lr' ]; then
-	 find . -name "*$2*" 2> dev/null
      else
 	 echo "Wrong arguments !!!"
      fi
@@ -40,18 +34,4 @@ gr() {
     else
 	echo "Wrong arguments !!!"
     fi
-}
-
-mountRemovableDrive() {
-    LABEL=`sudo dosfslabel $1`
-    #trim
-    read  -rd '' LABEL <<< "$LABEL"
-    LABEL=${LABEL// /__}
-    mkdir ~/$LABEL
-    sudo mount $1 ~/$LABEL 
-}
-
-umountRemovableDrive() {
-    sudo umount $1
-    rmdir `basename $1`
 }

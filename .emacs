@@ -21,9 +21,8 @@
 (defvar ps-print-header nil)
 
 (require 'package)
-
 (add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+             '("MELPA" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 (appt-activate 8)
@@ -45,18 +44,32 @@
 (use-package yasnippet
   :ensure t)
 
-(use-package auto-complete
+;; (use-package auto-complete
+;;   :ensure t)
+
+(use-package company
   :ensure t)
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+
+(use-package company-c-headers
+  :ensure t)
+(add-to-list 'company-backends 'company-c-headers)
 
 (use-package anzu
   :ensure t)
 
+(use-package auctex
+  :defer t
+  :ensure t)
+(require 'tex)
+
 (use-package cdlatex
   :ensure t)
 (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
-(defvar TeX-view-program-selection
+(setq TeX-view-program-selection
       '((output-pdf "PDF Viewer")))
-(defvar TeX-view-program-list
+(setq TeX-view-program-list
       '(("PDF Viewer" "mupdf %o")))
 
 
@@ -73,14 +86,18 @@
 (add-hook 'nxml-mode-hook (lambda () (require 'noxml-fold)))
 
 ;; start auto-complete
-(require 'auto-complete)
-(require 'auto-complete-config)
-(ac-config-default)
+;;(require 'auto-complete)
+;;(require 'auto-complete-config)
+;;(ac-config-default)
 ;;start yasnippet
 (require 'yasnippet)
 (yas-global-mode 1)
 
 (setq ac-disable-faces nil)
+
+(add-hook 'c-mode-hook
+          (lambda () (setq flycheck-clang-include-path
+                           (list (expand-file-name "/usr/include/libxml2/")))))
 
 
 ;; set minor modes
@@ -135,7 +152,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-'(ansi-color-faces-vector
+ '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
@@ -143,7 +160,7 @@
  '(custom-enabled-themes (quote (wheatgrass)))
  '(package-selected-packages
    (quote
-    (noxml-fold web-mode graphviz-dot-mode yasnippet which-key use-package flycheck cdlatex auto-complete anzu)))
+    (noxml-fold web-mode graphviz-dot-mode yasnippet which-key use-package flycheck cdlatex anzu)))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(tool-bar-mode nil))
@@ -152,7 +169,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-)
+ )
 ;;; .emacs ends here
 
 

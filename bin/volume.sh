@@ -2,7 +2,7 @@
 
 print() {
     if [[ `amixer -D pulse get Master | tail -1 ` =~ \[on\] ]]; then
-	echo  `amixer -D pulse get Master | tail -1|grep -o "[0-9]*%"`
+	echo `amixer -D pulse get Master | tail -1|grep -o "[0-9]*%"`
     else
 	echo 
     fi

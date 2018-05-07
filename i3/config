@@ -54,7 +54,9 @@ bindsym $mod+x exec emacs
 # start browser
 bindsym $mod+b exec qutebrowser
 # show ncmpcpp
-bindsym $mod+n [instance="music"] scratchpad show; [instance="music"] move position center  
+bindsym $mod+n [instance="music"] scratchpad show; [instance="music"] move position center
+# show calculator
+bindsym $mod+c [instance="calculator"] scratchpad show; [instance="calculator"] move position center  
 # start neomutt
 bindsym $mod+m exec $term -name mutt -e neomutt 
 # start htop
@@ -205,6 +207,11 @@ for_window [instance="music"] resize set 1000 600
 for_window [instance="music"] move scratchpad
 #for_window [instance="music"] border pixel $borderPix
 exec --no-startup-id $term -name music -e ncmpcpp
+# run calculator
+for_window [instance="calculator"] floating enable
+for_window [instance="calculator"] resize set 500 400
+for_window [instance="calculator"] move scratchpad
+exec --no-startup-id $term -name calculator -e bc -l
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -274,7 +281,7 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle; exec pkill -RT
 
 #bindsym XF86AudioMicMute exec amixer -q -D pulse sset Capture toggle; exec pkill -RTMIN+10
 #bindsym XF86WebCam exec amixer -q -D pulse sset Capture 5%-; exec pkill -RTMIN+10
-#bindsym XF86Display exec amixer -q -D pulse sset Capture 5%+; exec pkill -RTMIN+10
+bindsym XF86Display exec --no-startup-id  ~/bin/screens.sh
 #XF86WebCam
 #XF86WebDisplay
 
@@ -295,9 +302,11 @@ bindsym XF86AudioPrev exec mpc prev
 bindsym Print exec import -window root ~/Pictures/screenshot/`date +%d:%m:%g_%H:%M:%S`.jpg
 # screenshot active window
 bindsym $mod+Print exec import -window `xprop -root _NET_ACTIVE_WINDOW | cut -d ' ' -f 5` ~/Pictures/screenshot/`date +%d:%m:%g_%H:%M:%S`.jpg
-
+# screenshot region selected
+bindsym $mod+Shift+Print exec --no-startup-id ~/bin/screenshot_region.sh
 
 bindsym $mod+l exec --no-startup-id ~/bin/i3/i3exit.sh lock
+bindsym XF86ScreenSaver exec --no-startup-id ~/bin/i3/i3exit.sh lock
 
 set $mode_system System (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
 mode "$mode_system" {
@@ -323,7 +332,7 @@ bindsym $mod+Shift+g mode "$mode_gaps"
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
         bindsym i      mode "$mode_gaps_inner"
-	bindsym d      gaps inner all set $gapsInner, gaps outer all set $gapsOuter
+	bindsym d      gaps inner all set $gapsInner; gaps outer all set $gapsOuter
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }

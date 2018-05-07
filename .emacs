@@ -67,6 +67,8 @@
 (use-package cdlatex
   :ensure t)
 (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
+(add-hook 'LaTeX-mode-hook 'auto-fill-mode)
+(add-hook 'LaTeX-mode-hook (lambda () (setq fill-column 80)))
 (setq TeX-view-program-selection
       '((output-pdf "PDF Viewer")))
 (setq TeX-view-program-list

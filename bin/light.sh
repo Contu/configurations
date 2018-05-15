@@ -2,7 +2,7 @@
 
 
 print() {
-    echo "$(light | cut -d. -f1)"    
+    echo " $(light | cut -d. -f1)%"    
 }
 
 

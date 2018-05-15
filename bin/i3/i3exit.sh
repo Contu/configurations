@@ -17,10 +17,10 @@ case "$1" in
         lock && systemctl hibernate
         ;;
     reboot)
-        systemctl reboot
+        cd && systemctl reboot
         ;;
     shutdown)
-        systemctl poweroff
+        cd / && systemctl poweroff
         ;;
     *)
         echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"

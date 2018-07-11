@@ -41,6 +41,13 @@
   :ensure t
   :init (global-flycheck-mode))
 
+(use-package markdown-mode
+  :ensure t
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+
 (use-package yasnippet
   :ensure t)
 
@@ -83,9 +90,10 @@
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-(use-package noxml-fold
-  :ensure t)
-(add-hook 'nxml-mode-hook (lambda () (require 'noxml-fold)))
+;; (use-package noxml-fold
+;;   :ensure t)
+;; (add-hook 'nxml-mode-hook (lambda () (require 'noxml-fold)))
+;;(add-hook 'nxml-mode-hook 'noxml-fold-mode)
 
 ;; start auto-complete
 ;;(require 'auto-complete)
@@ -112,7 +120,6 @@
 ;; major and minor mode settings
 (add-to-list 'auto-mode-alist '("\\.gv\\'" . graphviz-dot-mode))
 (global-anzu-mode +1)
-(add-hook 'nxml-mode-hook 'noxml-fold-mode)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "S-C-e") 'enlarge-window)
@@ -127,7 +134,7 @@
 (put 'narrow-to-region 'disabled nil)
 
 
-(set-face-background 'mode-line "white")
+(set-face-background 'mode-line "#FF6633")
 (set-face-foreground 'mode-line "black")
 (set-face-background 'mode-line-inactive "darkgrey")
 (set-face-foreground 'mode-line-inactive "black")
@@ -139,7 +146,7 @@
 
 ;; Set transparency of emacs
 (defun transparency (value)
-  "Sets the transparency of the frame window. 0=transparent/100=opaque"
+  "Set the transparency of the frame window. 0=transparent/100=opaque"
   (interactive "nTransparency Value 0 - 100 opaque:")
   (set-frame-parameter (selected-frame) 'alpha value))
 

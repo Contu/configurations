@@ -6,4 +6,5 @@ echo -e $1 | convert \
 		 -font /usr/share/fonts/TTF/LiberationSans-BoldItalic.ttf \
 		 -pointsize 40 \
 		 -gravity center \
-		 label:@-  ~/Pictures/screenshot/label_image.gif
+		 label:@-  \
+		 ~/Pictures/screenshot/label_image.gif

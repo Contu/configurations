@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sudo umount $1
+sudo umount -l $1
 rmdir `basename $1`

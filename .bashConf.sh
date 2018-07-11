@@ -5,6 +5,7 @@ export SUDO_EDITOR="emacsclient -a vim -nw"
 export ALTERNATE_EDITOR="vim"
 export PATH=$PATH:~/bin
 export BROWSER=qutebrowser
+export TERMINAL=urxvt
 
 export GHOST_FOLDER=~/ghost
 

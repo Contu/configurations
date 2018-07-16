@@ -61,6 +61,8 @@ bindsym $mod+c [instance="calculator"] scratchpad show; [instance="calculator"] 
 bindsym $mod+m exec $term -name mutt -e neomutt 
 # start htop
 bindsym $mod+j exec $term -e htop
+# start calcurse
+bindsym $mod+g exec $term -name cal -e calcurse
 
 # kill focused window
 bindsym $mod+Shift+q kill

@@ -2,6 +2,7 @@
 
 CODE=~/code/configurations
 
+rsync -av ~/.config/feh $CODE
 rsync -av ~/.config/i3 $CODE
 rsync -av ~/.emacs $CODE/.emacs
 rsync -av ~/.vimrc $CODE/.vimrc

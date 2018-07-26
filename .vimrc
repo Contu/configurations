@@ -26,6 +26,9 @@ set showmatch
 "let mapleader=","  " leader is comma (default \)
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR> 
+" command to install pathogen: mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+execute pathogen#infect()
+set laststatus=2
 filetype plugin on
 filetype indent on
 " autocmd FileType python set omnifunc=pythoncomplete#Complete

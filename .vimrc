@@ -36,4 +36,4 @@ filetype indent on
 " autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 " loading external configurations
-:so ~/.vim-abbr.vim
+" :so ~/.vim-abbr.vim

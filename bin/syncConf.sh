@@ -3,10 +3,12 @@
 CODE=~/code/configurations
 
 rsync -av ~/.config/feh $CODE
+rsync -av ~/.urxvt $CODE
 rsync -av ~/.ncmpcpp $CODE
 rsync -av ~/.config/i3 $CODE
 rsync -av ~/.emacs $CODE/.emacs
 rsync -av ~/.vimrc $CODE/.vimrc
+rsync -av ~/.mailcap $CODE/.mailcap
 rsync -av ~/.i3blocks.conf $CODE/.i3blocks.conf
 rsync -av ~/.Xdefaults $CODE/.Xdefaults
 rsync -av ~/bin $CODE

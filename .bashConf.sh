@@ -7,9 +7,9 @@ export PATH=$PATH:~/bin
 export BROWSER=firefox
 export TERMINAL=urxvt
 export PS1="\[\033[01;36m\]\W:\[\033[00m\] "
-export GHOST_FOLDER=~/ghost
+export SECURE_FOLDER=~/secure
 
-[[ -d $GHOST_FOLDER && `ls -a $GHOST_FOLDER | wc -l` -eq 2 ]] && rmdir $GHOST_FOLDER 
+[[ -d $SECURE_FOLDER && `ls -a $SECURE_FOLDER | wc -l` -eq 2 ]] && rmdir $SECURE_FOLDER 
 
 #disable bell
 xset -b

@@ -60,7 +60,9 @@ bindsym $mod+n [instance="music"] scratchpad show; [instance="music"] move posit
 # show calculator
 bindsym $mod+c [instance="calculator"] scratchpad show; [instance="calculator"] move position center  
 # start neomutt
-bindsym $mod+m exec $term -name mutt -e neomutt 
+bindsym $mod+m exec $term -name mutt -e neomutt
+# start newsboat
+bindsym $mod+Shift+n exec $term -name newsboat -e newsboat 
 # start htop
 bindsym $mod+j exec $term -e htop
 # start calcurse
@@ -308,7 +310,7 @@ bindsym XF86AudioPlay exec mpc toggle; exec pkill -RTMIN+9 i3blocks;
 bindsym XF86AudioNext exec mpc next; exec pkill -RTMIN+9 i3blocks;
 bindsym XF86AudioPrev exec mpc prev; exec pkill -RTMIN+9 i3blocks;
 # refresh mpd i3blocks component
-bindsym $mod+Shift+n exec pkill -RTMIN+9 i3blocks;
+# bindsym $mod+Shift+n exec pkill -RTMIN+9 i3blocks;
 
 # screenshot all screen
 bindsym Print exec import -window root ~/Pictures/screenshot/`date +%d:%m:%g_%H:%M:%S`.jpg

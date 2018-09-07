@@ -11,3 +11,4 @@ color article             white   default
 
 
 macro y set browser "mpv %u"; open-in-browser ; set browser "$BROWSER %u"
+macro w set browser "w3m %u"; open-in-browser ; set browser "$BROWSER %u"

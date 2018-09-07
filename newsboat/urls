@@ -1,5 +1,20 @@
-https://stallman.org/rss/rss.xml
-https://blogs.oracle.com/javaone/rss
-https://www.linuxtoday.com/backend/biglt.rss
-http://www.scripting.com/rss.xml 
-https://static.fsf.org/fsforg/rss/blogs.xml
+#People
+https://stallman.org/rss/rss.xml "people"
+http://lukesmith.xyz/rss.xml "people"
+https://chomsky.info/feed/ "people"
+
+#Programming
+https://blogs.oracle.com/javaone/rss "IT"
+
+#Free software movement
+https://www.linuxtoday.com/backend/biglt.rss "IT" 
+https://static.fsf.org/fsforg/rss/blogs.xml "IT"
+
+#News
+https://www.ilfattoquotidiano.it/feed/ "news"
+http://feeds.bbci.co.uk/news/world/rss.xml "news"
+http://www.comune.montefiascone.vt.it/po/elenco_news_rss.php?tags=&area=H&x= "news" "~Montefiascone news"
+
+#Video
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "videos"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCosKcx5mKd0YL2zgkEcxk4w "videos"

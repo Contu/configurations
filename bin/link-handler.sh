@@ -11,7 +11,7 @@ case ${extension^^} in
 	curl -o /tmp/$filename $1
 	mupdf /tmp/$filename
 	;;
-    WEBM|MKV|GIF|AVI|MP4)
+    WEBM|MKV|GIF|AVI|MP4|MP3|OGG)
 	mpv $1
 	;;
     *)

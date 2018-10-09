@@ -8,6 +8,18 @@ export BROWSER=firefox
 export TERMINAL=urxvt
 export PS1="\[\033[01;36m\]\W:\[\033[00m\] "
 export SECURE_FOLDER=~/secure
+#Colors FG
+export KC='\033[0;30m'
+export RC='\033[0;31m'
+export GC='\033[0;32m'
+export YC='\033[1;33m'
+export OC='\033[0;33m'
+export BC='\033[0;34m'
+export PC='\033[0;35m'
+export CC='\033[0;36m'
+export AC='\033[0;37m'
+export WC='\033[1;37m'
+export NC='\033[0m'
 
 shopt -s autocd
 

@@ -146,7 +146,7 @@
 
 ;; Set transparency of emacs
 (defun transparency (value)
-  "Set the transparency of the frame window. 0=transparent/100=opaque"
+  "Set the transparency VALUE of the frame window.  0=transparent/100=opaque."
   (interactive "nTransparency Value 0 - 100 opaque:")
   (set-frame-parameter (selected-frame) 'alpha value))
 
@@ -179,6 +179,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+ (setq abbrev-file-name "~/.emacs.d/my_abbrevs")
+
 ;;; .emacs ends here
 
 

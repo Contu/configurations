@@ -9,6 +9,8 @@ export TERMINAL=urxvt
 export PS1="\[\033[01;36m\]\W:\[\033[00m\] "
 export SECURE_FOLDER=~/secure
 
+shopt -s autocd
+
 [[ -d $SECURE_FOLDER && `ls -a $SECURE_FOLDER | wc -l` -eq 2 ]] && rmdir $SECURE_FOLDER 
 
 #disable bell

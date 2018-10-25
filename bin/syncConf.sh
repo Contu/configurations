@@ -15,3 +15,4 @@ rsync -av ~/.i3blocks.conf $CODE/.i3blocks.conf
 rsync -av ~/.Xdefaults $CODE/.Xdefaults
 rsync -av ~/bin $CODE
 rsync -av ~/.bashConf.sh $CODE/.bashConf.sh
+rsync -av ~/.ranger-conf.txt $CODE/.ranger-conf.txt

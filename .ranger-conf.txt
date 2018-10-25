@@ -1,0 +1,9 @@
+
+# Custom mapping
+map bm shell ~/bin/mountRemovableDrive.sh %d/%f
+map bu shell ~/bin/umountRemovableDrive.sh %d/%f
+map bg shell feh --bg-scale %d/%f
+map bv shell feh -r. %f
+map bz shell zip -r archive %s
+map bt shell tar czvf archive.tar.gz %s
+map bf console shell -w vim 

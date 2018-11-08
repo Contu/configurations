@@ -58,7 +58,7 @@ bindsym $mod+b exec $browser
 # show ncmpcpp
 bindsym $mod+n [instance="music"] scratchpad show; [instance="music"] move position center
 # show calculator
-bindsym $mod+c [instance="calculator"] scratchpad show; [instance="calculator"] move position center  
+bindsym $mod+c [instance="prompt"] scratchpad show; [instance="prompt"] move position center  
 # start neomutt
 bindsym $mod+m exec $term -name mutt -e neomutt
 # start newsboat
@@ -214,10 +214,10 @@ for_window [instance="music"] move scratchpad
 #for_window [instance="music"] border pixel $borderPix
 exec --no-startup-id $term -name music -e ncmpcpp
 # run calculator
-for_window [instance="calculator"] floating enable
-for_window [instance="calculator"] resize set 700 250
-for_window [instance="calculator"] move scratchpad
-exec --no-startup-id $term -name calculator -e bc -l
+for_window [instance="prompt"] floating enable
+for_window [instance="prompt"] resize set 800 400
+for_window [instance="prompt"] move scratchpad
+exec --no-startup-id $term -name prompt
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

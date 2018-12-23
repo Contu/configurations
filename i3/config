@@ -137,7 +137,7 @@ set $workspace6 6
 set $workspace7 7
 set $workspace8 8
 set $workspace9 9
-set $workspace10 10
+set $workspace10 0
 
 # use workspaces on different monitors
 # set $mon1 LVDS1
@@ -190,6 +190,8 @@ for_window [class="^URxvt$" instance="^mutt$"] focus
 bindsym $mod+k exec ~/bin/cam-toggle.sh
 for_window [title="video0 - mpv"] floating enable
 for_window [title="video0 - mpv"] sticky enable
+
+bindsym $mod+i exec ~/bin/get-icons.sh
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -290,6 +292,8 @@ client.urgent #d33682 #d33682 #fdf6e3 #dc322f
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+; exec pkill -RTMIN+10 i3blocks 
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%-; exec pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle; exec pkill -RTMIN+10 i3blocks
+
+bindsym Caps_Lock exec ~/bin/caps-lock.sh; exec pkill -RTMIN+7 i3blocks
 
 bindsym XF86AudioMicMute exec amixer -q -D pulse sset Capture toggle; exec pkill -RTMIN+11 i3blocks
 #bindsym XF86WebCam exec amixer -q -D pulse sset Capture 5%-; exec pkill -RTMIN+10

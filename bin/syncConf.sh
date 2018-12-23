@@ -16,3 +16,4 @@ rsync -av ~/.Xdefaults $CODE/.Xdefaults
 rsync -av ~/bin $CODE
 rsync -av ~/.bashConf.sh $CODE/.bashConf.sh
 rsync -av ~/.ranger-conf.txt $CODE/.ranger-conf.txt
+rsync -av ~/.icons.txt $CODE/.icons.txt

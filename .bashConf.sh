@@ -21,7 +21,7 @@ export AC='\033[0;37m'
 export WC='\033[1;37m'
 export NC='\033[0m'
 
-shopt -s autocd
+#shopt -s autocd
 
 [[ -d $SECURE_FOLDER && `ls -a $SECURE_FOLDER | wc -l` -eq 2 ]] && rmdir $SECURE_FOLDER 
 

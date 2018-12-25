@@ -112,9 +112,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -192,6 +192,7 @@ for_window [title="video0 - mpv"] floating enable
 for_window [title="video0 - mpv"] sticky enable
 
 bindsym $mod+i exec ~/bin/get-icons.sh
+bindsym $mod+o exec ~/bin/mountIntercativeRemovableDrive.sh
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -294,6 +295,7 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%-; exec pkill
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle; exec pkill -RTMIN+10 i3blocks
 
 bindsym Caps_Lock exec ~/bin/caps-lock.sh; exec pkill -RTMIN+7 i3blocks
+bindsym $mod+Shift+s exec ~/bin/record.sh 
 
 bindsym XF86AudioMicMute exec amixer -q -D pulse sset Capture toggle; exec pkill -RTMIN+11 i3blocks
 #bindsym XF86WebCam exec amixer -q -D pulse sset Capture 5%-; exec pkill -RTMIN+10

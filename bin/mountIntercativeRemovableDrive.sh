@@ -17,6 +17,12 @@ function create-mount-point {
 DEVICE=$(lsblk -lo name,rm,label|awk '{if ($2 == 1) { print $1"["$3"]"}}' | dmenu -i -p MOUNT)
 
 DEVICE=$(echo $DEVICE | cut -d'[' -f1)
+
+if [[ $DEVICE = '' ]]; then
+    exit 1
+fi
+   
+
 FSTYPE=$(lsblk -lno fstype /dev/$DEVICE)
 LABEL=$(lsblk -lno label /dev/$DEVICE)
 

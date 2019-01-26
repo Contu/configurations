@@ -19,6 +19,9 @@ if [[ $EXTERNAL_SCREEN != "" ]]; then
     else
 	xrandr --output $EXTERNAL_SCREEN --left-of $EMBEDDED_SCREEN --auto
     fi
+
+    #reload background wallpaper
+    ~/.fehbg 
 fi
 
     

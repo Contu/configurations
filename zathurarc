@@ -1,3 +1,0 @@
-map [fullscreen] f toggle_fullscreen
-map [normal] f toggle_fullscreen
-map p print

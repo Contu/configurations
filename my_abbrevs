@@ -57,7 +57,7 @@ Salvatore" nil 0)
   '(
     ("bd" "\\documentclass[]{article}
 
-\\\usepackage[T1]{fontenc}
+\\usepackage[T1]{fontenc}
 \\usepackage[utf8]{inputenc}
 \\usepackage[italian]{babel}
 \\usepackage[a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}

@@ -17,11 +17,15 @@
 
 (define-abbrev-table 'conf-colon-mode-abbrev-table '())
 
+(define-abbrev-table 'conf-desktop-mode-abbrev-table '())
+
 (define-abbrev-table 'conf-javaprop-mode-abbrev-table '())
 
 (define-abbrev-table 'conf-ppd-mode-abbrev-table '())
 
 (define-abbrev-table 'conf-space-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-toml-mode-abbrev-table '())
 
 (define-abbrev-table 'conf-unix-mode-abbrev-table '())
 
@@ -31,15 +35,29 @@
 
 (define-abbrev-table 'debugger-mode-abbrev-table '())
 
+(define-abbrev-table 'diary-fancy-display-mode-abbrev-table '())
+
+(define-abbrev-table 'diary-mode-abbrev-table '())
+
 (define-abbrev-table 'doctex-mode-abbrev-table '())
 
 (define-abbrev-table 'edit-abbrevs-mode-abbrev-table '())
+
+(define-abbrev-table 'elisp-byte-code-mode-abbrev-table '())
 
 (define-abbrev-table 'emacs-lisp-byte-code-mode-abbrev-table '())
 
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
 
+(define-abbrev-table 'epa-info-mode-abbrev-table '())
+
+(define-abbrev-table 'epa-key-list-mode-abbrev-table '())
+
+(define-abbrev-table 'epa-key-mode-abbrev-table '())
+
 (define-abbrev-table 'flycheck-error-list-mode-abbrev-table '())
+
+(define-abbrev-table 'flymake-diagnostics-buffer-mode-abbrev-table '())
 
 (define-abbrev-table 'fundamental-mode-abbrev-table '())
 
@@ -49,25 +67,143 @@
 Salvatore" nil 0)
    ))
 
+(define-abbrev-table 'gnus-group-mode-abbrev-table '())
+
+(define-abbrev-table 'graphviz-dot-mode-abbrev-table '())
+
 (define-abbrev-table 'help-mode-abbrev-table '())
 
 (define-abbrev-table 'ibuffer-mode-abbrev-table '())
 
 (define-abbrev-table 'latex-mode-abbrev-table
   '(
-    ("bd" "\\documentclass[]{article}
+    ("bd" "\\documentclass[a4paper,11pt]{article}
 
 \\usepackage[T1]{fontenc}
 \\usepackage[utf8]{inputenc}
 \\usepackage[italian]{babel}
-\\usepackage[a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+%\\usepackage[a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
 %\\usepackage{graphicx}
-%\\usepackage{color}
+%\\usepackage{xcolor}
+%\\usepackage{booktabs}
 %\\usepackage{listings} % highlight code
 \\begin{document}
 
 
 \\end{document}" nil 2)
+    ("bp" "\\documentclass{beamer}
+
+%\\usepackage[italian]{babel}
+%\\usepackage{graphicx}
+%\\usepackage{listings}
+%\\usepackage{color}
+
+%\\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\\usetheme{default}
+%\\usetheme{AnnArbor}
+%\\usetheme{Antibes}
+%\\usetheme{Bergen}
+%\\usetheme{Berkeley}
+%\\usetheme{Berlin}
+%\\usetheme{Boadilla}
+%\\usetheme{CambridgeUS}
+%\\usetheme{Copenhagen}
+%\\usetheme{Darmstadt}
+%\\usetheme{Dresden}
+%\\usetheme{Frankfurt}
+%\\usetheme{Goettingen}
+%\\usetheme{Hannover}
+%\\usetheme{Ilmenau}
+%\\usetheme{JuanLesPins}
+%\\usetheme{Luebeck}
+%\\usetheme{Madrid}
+%\\usetheme{Malmoe}
+%\\usetheme{Marburg}
+%\\usetheme{Montpellier}
+%\\usetheme{PaloAlto}
+%\\usetheme{Pittsburgh}
+%\\usetheme{Rochester}
+%\\usetheme{Singapore}
+%\\usetheme{Szeged}
+\\usetheme{Warsaw}
+\\setbeamertemplate{footline}{
+  \\leavevmode%
+  \\hbox{%
+  % \\begin{beamercolorbox}[wd=.333333\\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+  %   \\usebeamerfont{author in head/foot}\\insertsection
+  % \\end{beamercolorbox}%
+  % \\begin{beamercolorbox}[wd=.333333\\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+  %   \\usebeamerfont{title in head/foot}\\insertsubsection
+  % \\end{beamercolorbox}%
+  \\begin{beamercolorbox}[wd=1.0\\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    %\\usebeamerfont{date in head/foot}\\insertshortdate{}\\hspace*{2em}
+    \\insertframenumber{} / \\inserttotalframenumber\\hspace*{2ex} 
+  \\end{beamercolorbox}}%
+  \\vskip0pt%
+}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\\usecolortheme{albatross}
+%\\usecolortheme{beaver}
+%\\usecolortheme{beetle}
+%\\usecolortheme{dove}
+%\\usecolortheme{fly}
+%\\usecolortheme{lily}
+%\\usecolortheme{orchid}
+%\\usecolortheme{rose}
+%\\usecolortheme{seagull}
+%\\usecolortheme{seahorse}
+%\\usecolortheme{whale}
+%\\usecolortheme{dolphin}
+%\\usecolortheme{wolverine}
+%\\usecolortheme{crane}
+
+\\definecolor{mygreen}{rgb}{0.125, 0.5, 0.25}
+\\usecolortheme[named=mygreen]{structure}
+
+%\\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+
+%}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\\title[Short title]{Full title} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\\author{Salvatore Contu} % Your name
+\\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+%University of California \\\\ % Your institution for the title page
+%\\medskip
+\\textit{Salvatore.Contu@gmail.com} % Your email address
+}
+\\date{\\today} % Date, can be changed to a custom date
+
+
+\\begin{document}
+
+\\begin{frame}
+\\titlepage % Print the title page as the first slide
+\\end{frame}
+
+%\\begin{frame}
+%\\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+%\\tableofcontents % Throughout your presentation, if you choose to use \\section{} and \\subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+%\\end{frame}
+
+\\end{document}" nil 0)
     ("hc" "\\lstdefinestyle{mystyle}{
     backgroundcolor=\\color{white},   
     commentstyle=\\color{green},
@@ -86,17 +222,21 @@ Salvatore" nil 0)
     showtabs=false,                  
     tabsize=2
 }
-\\lstset{style=mystyle}" nil 0)
-    ("ii" "\\begin{figure}[h]
+\\lstset{style=mystyle}" nil 1)
+    ("ii" "\\begin{figure}[htp]
   \\centering
   \\includegraphics[width=.5\\textwidth]{}
   \\caption{Image name}
   %\\label{fig:ref1}
 \\end{figure}" nil 1)
-    ("it" "\\begin{table}[h]
+    ("tt" "\\begin{table}[htp]
   \\centering
-  \\begin{tabular}[h]{}
-    
+  \\begin{tabular}{}
+  \\toprule
+
+  \\midrule
+
+  \\bottomrule  
   \\end{tabular}
   \\caption{Table name}
   %\\label{tab:ref1}
@@ -106,6 +246,8 @@ Salvatore" nil 0)
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'log4e-mode-abbrev-table '())
+
+(define-abbrev-table 'message-mode-abbrev-table '())
 
 (define-abbrev-table 'messages-buffer-mode-abbrev-table '())
 
@@ -135,6 +277,8 @@ Salvatore" nil 0)
 
 (define-abbrev-table 'slitex-mode-abbrev-table '())
 
+(define-abbrev-table 'snippet-mode-abbrev-table '())
+
 (define-abbrev-table 'special-mode-abbrev-table '())
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
@@ -146,4 +290,8 @@ Salvatore" nil 0)
 (define-abbrev-table 'text-mode-abbrev-table '())
 
 (define-abbrev-table 'use-package-statistics-mode-abbrev-table '())
+
+(define-abbrev-table 'web-mode-abbrev-table '())
+
+(define-abbrev-table 'xref--xref-buffer-mode-abbrev-table '())
 

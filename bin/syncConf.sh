@@ -10,6 +10,7 @@ rsync -av ~/.newsboat/config $CODE/newsboat
 rsync -av ~/.newsboat/urls $CODE/newsboat
 rsync -av ~/.emacs $CODE/.emacs
 rsync -av ~/.vimrc $CODE/.vimrc
+rsync -av ~/.vim-abbr.vim $CODE/.vim-abbr.vim
 rsync -av ~/.mailcap $CODE/.mailcap
 rsync -av ~/.i3blocks.conf $CODE/.i3blocks.conf
 rsync -av ~/.Xdefaults $CODE/.Xdefaults

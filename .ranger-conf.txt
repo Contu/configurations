@@ -10,3 +10,4 @@ map bx shell tar cJvf archive.tar.xz %s
 map bd shell $HOME/bin/decompress.sh %s
 map bf console shell -w vim
 map bs shell neomutt -a %d/%f
+map bp shell lpr -P PDF %d/%f

@@ -64,7 +64,7 @@
 (define-abbrev-table 'global-abbrev-table
   '(
     ("ig" "ciao,
-Salvatore" nil 0)
+Salvatore" nil 1)
    ))
 
 (define-abbrev-table 'gnus-group-mode-abbrev-table '())
@@ -203,7 +203,7 @@ Salvatore" nil 0)
 %\\tableofcontents % Throughout your presentation, if you choose to use \\section{} and \\subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
 %\\end{frame}
 
-\\end{document}" nil 0)
+\\end{document}" nil 1)
     ("hc" "\\lstdefinestyle{mystyle}{
     backgroundcolor=\\color{white},   
     commentstyle=\\color{green},
@@ -222,13 +222,13 @@ Salvatore" nil 0)
     showtabs=false,                  
     tabsize=2
 }
-\\lstset{style=mystyle}" nil 1)
+\\lstset{style=mystyle}" nil 2)
     ("ii" "\\begin{figure}[htp]
   \\centering
   \\includegraphics[width=.5\\textwidth]{}
   \\caption{Image name}
   %\\label{fig:ref1}
-\\end{figure}" nil 1)
+\\end{figure}" nil 2)
     ("tt" "\\begin{table}[htp]
   \\centering
   \\begin{tabular}{}
@@ -240,7 +240,7 @@ Salvatore" nil 0)
   \\end{tabular}
   \\caption{Table name}
   %\\label{tab:ref1}
-\\end{table}" nil 0)
+\\end{table}" nil 1)
    ))
 
 (define-abbrev-table 'lisp-mode-abbrev-table '())
@@ -257,7 +257,17 @@ Salvatore" nil 0)
 
 (define-abbrev-table 'occur-mode-abbrev-table '())
 
-(define-abbrev-table 'org-mode-abbrev-table '())
+(define-abbrev-table 'org-mode-abbrev-table
+  '(
+    ("om" "#+TITLE: Hello World !!!
+#+AUTHOR: Salvatore Contu
+#+OPTIONS: num:t p:nil pri:nil stat:nil tags:nil tasks:nil timestamp:nil toc:nil html-postamble:nil date:nil e:nil email:nil f:nil inline:nil
+
+#+LATEX_HEADER: \\usepackage[hyperref,x11names]{xcolor}
+
+# #+MACRO: color @@html:<font color=\"$1\">$2</font>@@
+#+MACRO: color \\textcolor{$1}{$2}" nil 0)
+   ))
 
 (define-abbrev-table 'outline-mode-abbrev-table '())
 
@@ -268,6 +278,8 @@ Salvatore" nil 0)
 (define-abbrev-table 'process-menu-mode-abbrev-table '())
 
 (define-abbrev-table 'prog-mode-abbrev-table '())
+
+(define-abbrev-table 'rust-mode-abbrev-table '())
 
 (define-abbrev-table 'select-tags-table-mode-abbrev-table '())
 

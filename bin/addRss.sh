@@ -31,7 +31,7 @@ EOM
 
     echo $TEMPLATE >> ${BASE_DIR}/updateFeed.rss
 
-    tail -n $( expr $(wc -l < ${BASE_DIR}/$FILE_NAME) - 5 ) ${BASE_DIR}/$FILE_NAME >> ${BASE_DIR}/updateFeed.rss
+    tail -n $( expr $(wc -l < ${BASE_DIR}/$FILE_NAME) - 6 ) ${BASE_DIR}/$FILE_NAME >> ${BASE_DIR}/updateFeed.rss
 
     mv ${BASE_DIR}/$FILE_NAME{,.bak}
 

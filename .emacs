@@ -79,7 +79,8 @@
 (setq TeX-view-program-selection
       '((output-pdf "PDF Viewer")))
 (setq TeX-view-program-list
-      '(("PDF Viewer" "zathura %o")))
+      '(("PDF Viewer" "mupdf %o")))
+
 
 (use-package graphviz-dot-mode
   :ensure t)
@@ -88,20 +89,6 @@
   :ensure t)
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-
-;; rust IDE
-(use-package rust-mode
-  :ensure t)
-(use-package flymake-rust
-  :ensure t)
-(use-package racer
-  :ensure t)
-(use-package cargo
-  :ensure t)
-
-;; (add-hook 'rust-mode-hook)
-;; (add-hook 'racer-mode-hook)
-(add-hook 'rust-mode-hook 'cargo-minor-mode)
 
 ;; (use-package noxml-fold
 ;;   :ensure t)

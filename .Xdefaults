@@ -6,7 +6,8 @@
 !-----------------------------------------------------------------------
 
 ! unicode
-URxvt.imLocale: en_US.UTF-8
+URxvt.imLocale:				en_US.UTF-8
+!URxvt.letterSpace:			0
 
 ! scrolling garbage
 URxvt*scrollBar:                       false

@@ -1,7 +1,6 @@
 #People
 https://stallman.org/rss/rss.xml "people"
 http://lukesmith.xyz/rss.xml "people"
-https://chomsky.info/feed/ "people"
 
 #Programming
 https://blogs.oracle.com/javaone/rss "IT"
@@ -10,7 +9,6 @@ https://blogs.oracle.com/javaone/rss "IT"
 https://www.linuxtoday.com/backend/biglt.rss "IT" 
 https://static.fsf.org/fsforg/rss/blogs.xml "IT"
 https://static.fsf.org/fsforg/rss/events.xml "IT" "~FSF events"
-http://www.linuxvoice.com/feed/ "IT"
 
 #News
 https://www.ilfattoquotidiano.it/feed/ "news"
@@ -19,6 +17,5 @@ http://www.comune.montefiascone.vt.it/po/elenco_news_rss.php?tags=&area=H&x= "ne
 
 #Video
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "videos"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCosKcx5mKd0YL2zgkEcxk4w "videos"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCW4b9qhEQPI8XD9z_i4WAPw "videos"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCtxCXg-UvSnTKPOzLH4wJaQ "videos"

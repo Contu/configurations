@@ -1,7 +1,7 @@
 #!/bin/bash
 
 filter() {
-    tr '\n' ' ' | grep -Po '.*(?= \[playing])|paused'|tr -d '\n'
+    echo $(tr '\n' ' ' | grep -Po '.*(?= \[playing])|paused'|tr -d '\n')
 }
 
 case $BLOCK_BUTTON in

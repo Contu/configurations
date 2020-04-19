@@ -57,8 +57,9 @@ bindsym $mod+x exec emacs
 bindsym $mod+b exec $browser
 # show ncmpcpp
 bindsym $mod+n [instance="music"] scratchpad show; [instance="music"] move position center
-# show calculator
-bindsym $mod+c [instance="prompt"] scratchpad show; [instance="prompt"] move position center  
+# show calendar
+# bindsym $mod+c [instance="prompt"] scratchpad show; [instance="prompt"] move position center
+bindsym $mod+c exec $term -name cal -e calcurse
 # start neomutt
 bindsym $mod+m exec $term -name mutt -e neomutt
 # start newsboat
@@ -66,7 +67,7 @@ bindsym $mod+Shift+n exec $term -name newsboat -e newsboat
 # start htop
 bindsym $mod+j exec $term -e htop
 # start calcurse
-bindsym $mod+g exec $term -name cal -e calcurse
+# bindsym $mod+g exec $term -name cal -e calcurse
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -171,8 +172,8 @@ for_window [class="^Emacs"] focus
 #for_window [class="^Emacs"] border pixel $borderPix
 
 # start qutebrowser on workspace 2
-assign [class="^Firefox$"] $workspace2
-for_window [class="^Firefox$"] focus
+assign [class="^firefox$"] $workspace2
+for_window [class="^firefox$"] focus
 
 # start ranger on workspace 3
 #assign [class="^URxvt$" instance="^ranger$"] $workspace3
@@ -206,6 +207,10 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
+# run dunst notify service
+exec --no-startup-id dunst
+# set layout keyboard
+exec --no-startup-id setxkbmap -layout it
 # set up wallpaper
 exec --no-startup-id ~/.fehbg
 # run compton
@@ -217,10 +222,10 @@ for_window [instance="music"] move scratchpad
 #for_window [instance="music"] border pixel $borderPix
 exec --no-startup-id $term -name music -e ncmpcpp
 # run calculator
-for_window [instance="prompt"] floating enable
-for_window [instance="prompt"] resize set 900 500
-for_window [instance="prompt"] move scratchpad
-exec --no-startup-id $term -name prompt
+#for_window [instance="prompt"] floating enable
+#for_window [instance="prompt"] resize set 900 500
+#for_window [instance="prompt"] move scratchpad
+#exec --no-startup-id $term -name prompt
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -306,8 +311,8 @@ bindsym XF86Display exec --no-startup-id  ~/bin/screens.sh
 #XF86WebDisplay
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec light -A 5; exec pkill -RTMIN+12 i3blocks # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 5; exec pkill -RTMIN+12 i3blocks  # decrease screen brightness
+bindsym XF86MonBrightnessUp exec sudo brightnessctl set +5% > /dev/null; exec pkill -RTMIN+12 i3blocks # increase screen brightness
+bindsym XF86MonBrightnessDown exec sudo brightnessctl set 5%- > /dev/null; exec pkill -RTMIN+12 i3blocks  # decrease screen brightness
 
 # Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -330,7 +335,7 @@ bindsym $mod+Shift+Print exec --no-startup-id ~/bin/screenshot_region.sh
 bindsym $mod+Shift+l exec --no-startup-id ~/bin/i3/i3exit.sh lock
 bindsym XF86ScreenSaver exec --no-startup-id ~/bin/i3/i3exit.sh lock
 
-set $mode_system System (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
+set $mode_system System: (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
 mode "$mode_system" {
     
     bindsym l exec --no-startup-id ~/bin/i3/i3exit.sh logout, mode "default"

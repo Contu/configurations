@@ -2,13 +2,13 @@
 
 
 print() {
-    echo " $(light | cut -d. -f1)%"    
+    echo " $(sudo brightnessctl info|sed -e '2!d' -e 's/(\(.*\))/\1/'| awk '{print $4}')"    
 }
 
 
 case $BLOCK_BUTTON in
-    4) light -A 5; print ;; 
-    5) light -U 5; print ;; 
+    4) sudo brightnessctl set +5% > /dev/null; print ;; 
+    5) sudo brightnessctl set 5%- > /dev/null; print ;; 
     *) print ;;
 esac
 

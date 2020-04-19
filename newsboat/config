@@ -1,5 +1,5 @@
 browser "$BROWSER %u"
-external-url-viewer "urlview"
+external-url-viewer "urlscan"
 
 #color background          white   black
 color listnormal          white   default

@@ -66,10 +66,10 @@
 (use-package anzu
   :ensure t)
 
-(use-package auctex
-  :defer t
-  :ensure t)
-(require 'tex)
+;; (use-package auctex
+;;   :defer t
+;;   :ensure t)
+;; (require 'tex)
 
 (use-package cdlatex
   :ensure t)

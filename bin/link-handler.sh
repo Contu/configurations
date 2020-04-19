@@ -9,7 +9,7 @@ case ${extension^^} in
     PDF)
 	filename=${1##*/}
 	curl -o /tmp/$filename $1
-	mupdf /tmp/$filename
+	zathura /tmp/$filename
 	;;
     WEBM|MKV|GIF|AVI|MP4|MP3|OGG)
 	mpv $1
